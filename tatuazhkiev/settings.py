@@ -19,6 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '06&(uw0lsobw9(3i@ajnfuf_lm#wbj+v6ph+)!g@7s(+tm84*o'
 
+TEMPLATE_DIRS = (
+    'D://Programming/tatuazhkiev.com.ua_django/templates',
+)
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
