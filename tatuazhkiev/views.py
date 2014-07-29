@@ -26,4 +26,4 @@ def hours_ahead(request, offset):
 
 def main_page(request):
     now = datetime.datetime.now() 
-    return render_to_response('index1.html')
+    return render_to_response('index.html')
