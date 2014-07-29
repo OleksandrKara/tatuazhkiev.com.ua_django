@@ -2,6 +2,7 @@
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
+from django.shortcuts import render_to_response
 import datetime
 
 def hello(request):
@@ -11,10 +12,8 @@ def my_homepage_view(request):
     return HttpResponse("Главная страница")
 	
 def current_datetime(request):
-    now = datetime.datetime.now()
-    t = get_template('current_datetime.html')
-    html = t.render(Context({'current_date': now}))
-    return HttpResponse(html)
+    now = datetime.datetime.now()    
+    return render_to_response('current_datetime.html', {'current_date': now})
 
 def hours_ahead(request, offset):
     try:
@@ -24,3 +23,7 @@ def hours_ahead(request, offset):
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
     html = "<html><body>In %s hour(s), it will be %s.</body></html>" % (offset, dt)
     return HttpResponse(html)
+
+def main_page(request):
+    now = datetime.datetime.now() 
+    return render_to_response('index1.html')

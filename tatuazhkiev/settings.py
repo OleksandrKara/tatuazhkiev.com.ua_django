@@ -23,6 +23,9 @@ TEMPLATE_DIRS = (
     'D://Programming/tatuazhkiev.com.ua_django/templates',
 )
 
+MEDIA_ROOT = "D://Programming/tatuazhkiev.com.ua_django/static/"
+MEDIA_URL = "http://localhost:8000/static/"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -69,7 +72,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
