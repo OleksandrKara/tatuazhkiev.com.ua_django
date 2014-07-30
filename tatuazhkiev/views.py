@@ -27,3 +27,6 @@ def hours_ahead(request, offset):
 def main_page(request):
     now = datetime.datetime.now() 
     return render_to_response('index.html')
+
+def foto_handler(request):
+    return render_to_response('foto-tatuazh.html')
