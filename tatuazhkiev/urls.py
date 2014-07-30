@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from tatuazhkiev.views import hello, my_homepage_view, current_datetime, hours_ahead, main_page, foto_handler
+from tatuazhkiev.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -10,14 +10,16 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'tatuazhkiev.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
-	('^hello/$', hello),
+	#('^date/$', current_datetime),
+	#(r'^time/plus/(\d{1,2})/$', hours_ahead),
 	('^$', main_page),
-	('^date/$', current_datetime),
-	(r'^time/plus/(\d{1,2})/$', hours_ahead),
 	('^index/$', main_page),
-	('^foto/$', foto_handler)
+	('^foto.html/$', foto_handler),
+	('^ceni.html/$', ceni_handler),
+	('^otzivi.html/$', otzivi_handler),
+	('^faq.html/$', faq_handler),
+	('^kontakti.html/$', kontakti_handler),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

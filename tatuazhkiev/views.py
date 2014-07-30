@@ -4,12 +4,6 @@ from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
 import datetime
-
-def hello(request):
-    return HttpResponse("<h1>Здравствуй, Мир</h1>")
-	
-def my_homepage_view(request):
-    return HttpResponse("Главная страница")
 	
 def current_datetime(request):
     now = datetime.datetime.now()    
@@ -30,3 +24,15 @@ def main_page(request):
 
 def foto_handler(request):
     return render_to_response('foto-tatuazh.html')
+
+def ceni_handler(request):
+    return render_to_response('ceni.html')
+	
+def otzivi_handler(request):
+    return render_to_response('otzivi.html')
+
+def faq_handler(request):
+    return render_to_response('faq.html')
+
+def kontakti_handler(request):
+    return render_to_response('kontakti.html')

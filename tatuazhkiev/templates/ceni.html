@@ -7,16 +7,8 @@
 {% endblock %}
 {% block libs %}
 	{{ block.super }}
-	<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-	<link rel="stylesheet" type="text/css" media="all" href="fancybox/jquery.fancybox.css">
-	<script type="text/javascript" src="fancybox/jquery.fancybox.js?v=2.0.6"></script>
-
-</head>
-<body>
-<!--==============================header=================================-->
-<div class="header">
-  <div>
+{% endblock %}
+{% block menu %}
     <div class="subpages-nav">
       <nav>
         <ul class="menu">
@@ -27,11 +19,11 @@
           <li><a  href="faq.html" class="moveup" >Вопрос<br>ответ</a></li>
           <li><a href="kontakti.html">Контакты</a></li>
         </ul>
-        <h1><a class="modalbox" href="#inline"><img src="images/logo.png" alt=""></a></h1>
+        <h1><a class="modalbox" href="#inline"><img src="{% static 'images/logo.png' %}" alt=""></a></h1>
       </nav>
     </div>
-  </div>
-</div>
+{% endblock %}
+{% block content %}		 
 <!--==============================content================================-->
 <section id="content">
   <div class="pad-1">
@@ -72,36 +64,4 @@
     </div>
   </div>
 </section>
-<!--==============================footer=================================-->
-<footer> <span><strong>Copyright © 2014 Салон татуажа. | Все права защищены.</strong><br></footer>
-</body>
-</html>
-
-
-
-
-
-
-<!-- hidden inline form -->
-<div id="inline">
-	<div class="comment">
-	<h2>Оставьте заявку</h2>
-	<h3>и мы вам перезвоним.</h3>
-	</div>
-<br>
-	<form id="contact" name="contact" action="#" method="post" class="phone_form">
-		<label for="name">Ваше имя:</label>
-		<input type="name" id="name" name="name" class="txt" >
-		<br>
-		<div class="user_phone">
-		<label for="user_phone">Телефон:</label>
-		<input type="phone" required pattern="[0-9_-]{10}" placeholder="(___) ___ __ __" id="user_phone" name= "phone" title="Формат: (096) 999 99 99" />
-		</div>
-		<br>
-		<button id="send">Отправить</button>
-	</form>
-</div>
-<!-- hidden inline form -->
-
-
-<div style="position: fixed; top: 30%; left:0%; z-index:2;"><a target="_blank" class="switch-a-img" href="https://vk.com/write17914100"></a></div>
+{% endblock %}
