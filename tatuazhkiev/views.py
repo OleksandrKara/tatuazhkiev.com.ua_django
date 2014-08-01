@@ -22,9 +22,6 @@ def main_page(request):
     now = datetime.datetime.now() 
     return render_to_response('index.html')
 
-def foto_handler(request):
-    return render_to_response('foto-tatuazh.html')
-
 def ceni_handler(request):
     return render_to_response('ceni.html')
 	
@@ -36,3 +33,15 @@ def faq_handler(request):
 
 def kontakti_handler(request):
     return render_to_response('kontakti.html')
+
+def foto_handler(request):
+    return render_to_response('foto/foto-tatuazh.html')
+
+def foto_brovi_handler(request):
+    return render_to_response('foto/foto-tatuazh.html')
+
+def foto_gubi_handler(request):
+    return render_to_response('foto/foto-tatuazh-gub.html')
+
+def foto_glaza_handler(request):
+    return render_to_response('foto/foto-tatuazh-glaz.html')

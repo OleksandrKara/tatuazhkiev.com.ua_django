@@ -14,12 +14,16 @@ urlpatterns = patterns('',
 	#('^date/$', current_datetime),
 	#(r'^time/plus/(\d{1,2})/$', hours_ahead),
 	('^$', main_page),
-	('^index/$', main_page),
-	('^foto.html/$', foto_handler),
+	('^index.html/$', main_page),
+	('^foto/$', foto_handler),
+	('^foto/foto-brovi.html/$', foto_brovi_handler),
+	('^foto/foto-tatuazh-gub.html/$', foto_gubi_handler),
+	('^foto/foto-tatuazh-glaz.html/$', foto_glaza_handler),
 	('^ceni.html/$', ceni_handler),
 	('^otzivi.html/$', otzivi_handler),
 	('^faq.html/$', faq_handler),
 	('^kontakti.html/$', kontakti_handler),
+	
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
