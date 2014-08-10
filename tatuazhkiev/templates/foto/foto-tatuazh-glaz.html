@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+	Татуаж в Киеве - Фото татуаж глаз
+{% endblock %}
+{% block libs %}
+	{{ block.super }}
+	<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/skin-2.css' %}">
+	<link rel="stylesheet" href="{% static 'css/hover-effects.css' %}" type="text/css" media="screen"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/tabs.css' %}">
+	<script src="{% static 'js/tabs.js' %}"></script>
+	
+	<!-- jQuery <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+	<!-- Make IE8 and below responsive by adding CSS3 MediaQuery support -->
+	<!--[if lt IE 9]>	  
+		<script type='text/javascript' src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js'></script> 
+	<![endif]-->
+	<!-- Fresco -->
+	<script type="text/javascript" src="{% static 'js/fresco/fresco.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/fresco/fresco.css' %}" />
+	<!-- Fresco -->
+{% endblock %}
+{% block menu %}
+ 	<div class="subpages-nav">
+		<nav>
+		  <ul class="menu">
+			  <li class="li-none"><a href="/index.html">Главная</a></li>
+			  <li class="current"><a href="/foto.html">Фото</a></li>
+			  <li><a href="/ceni.html">Цены</a></li>
+			  <li class="li-left li-none"><a href="/otzivi.html">Отзывы</a></li>
+			  <li><a  href="/faq.html" class="moveup" >Вопрос<br>ответ</a></li>
+			  <li><a href="/kontakti.html">Контакты</a></li>
+		  </ul>
+        <h1><a class="modalbox" href="#inline"><img src="{% static 'images/logo.png' %}" alt=""></a></h1>
+		</nav>
+	</div>
+{% endblock %}
+{% block content %}		  
+<!--==============================content================================-->
+<section id="content">
+  <div class="page3-row1 pad-2 tabs">
+    <div class="col-8">
+      <h2 class="h2 p2">Категории:</h2>
+      <ul class="list-1">
+        <li><a href="/foto/foto-brovi.html">Татуаж бровей</a></li>
+        <li class="current"><a href="/foto/foto-tatuazh-gub.html">Татуаж губ</a></li>
+        <li><a href="/foto/foto-tatuazh-glaz.html">Татуаж глаз</a></li>        
+       </ul>
+    </div>
+	<div class="col-9">
+      <h3 class="h3-2">Татуаж глаз:</h3>
+			<div class='demonstrations'>
+				  <div id="block-1" class="active">
+				  
+					  <div class="view effect">
+						 <img src="{% static 'images/photo/small/1s-glaza.jpg' %}" />
+						 <div class="mask"></div>
+						 <div class="content">
+							  <a href="{% static 'images/photo/big/1b-glaza.jpg' %}" 
+								 class='info fresco' 
+								 data-fresco-group='example' 
+								 data-fresco-caption="Заживший татуаж век.">
+							  </a>
+						</div>
+					  </div> 
+					  <div class="view effect">
+						 <img src="{% static 'images/photo/small/2s-glaza.jpg' %}" />
+						 <div class="mask"></div>
+						 <div class="content">
+							  <a href="{% static 'images/photo/big/2b-glaza.jpg' %}" 
+								 class='fresco info' 
+								 data-fresco-group='example' 
+								 data-fresco-caption="Татуаж стрелок, спустя 2 месяца.">
+							  </a>
+						</div>
+					  </div> 
+				  </div>
+			</div>
+	</div>
+  </div>
+</section>
+{% endblock %}
