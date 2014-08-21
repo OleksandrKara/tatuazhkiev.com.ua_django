@@ -35,8 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-	'tatuazhkiev.com.ua_django.books',
+    'django.contrib.staticfiles',	
 )
 
 MIDDLEWARE_CLASSES = (
