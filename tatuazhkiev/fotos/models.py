@@ -15,7 +15,7 @@ class Author(models.Model):
     salutation = models.CharField(max_length=10)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
-    email = models.EmailField()
+    email = models.EmailField(blank=True)
     headshot = models.ImageField(upload_to='/tmp')
 
     def __unicode__(self):
@@ -29,3 +29,14 @@ class Book(models.Model):
 
     def __unicode__(self):
         return self.title
+
+class Foto(models.Model):
+	TATUAZH_TYPE = (		
+		('Br', 'Brovi'),
+		('Gu', 'Gubi'),
+		('Gl', 'Glaza'),
+	)	
+	comment = models.CharField(max_length=100)
+	type = models.CharField(max_length=2, default='Br', choices=TATUAZH_TYPE)
+	small_image = models.ImageField(upload_to="images/", help_text='970x1024px')
+	big_image = models.ImageField(upload_to="images/", help_text='150x150px')

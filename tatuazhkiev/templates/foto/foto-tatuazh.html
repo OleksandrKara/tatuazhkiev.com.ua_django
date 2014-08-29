@@ -63,7 +63,7 @@
 							 data-fresco-caption="Татуаж бровей, сразу после процедуры и месяц спустя.">
 						  </a>
 						</div>
-				</div> 
+					</div> 
 					  
 					  <div class="view effect">
 						<img src="{% static 'images/photo/small/2s-brovi.jpg' %}" />
@@ -88,6 +88,20 @@
 							  </a>
 						</div>
 					  </div>
+					  
+					  {% for foto in fotos %}
+					  <div class="view effect">
+						 <img src="{{  foto.small_image }}">
+						 <div class="mask"></div>
+						 <div class="content">
+							  <img src="{{  foto.big_image }}">
+								 class='fresco info' 
+								 data-fresco-group='example' 
+								 data-fresco-caption="{{ foto.comment }}">
+							  </a>
+						</div>
+					  </div>
+					  {% endfor %}	
 			</div>
 	</div>
   </div>

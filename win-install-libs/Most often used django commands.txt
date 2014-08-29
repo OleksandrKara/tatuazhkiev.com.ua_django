@@ -1,0 +1,10 @@
+Helpful commands:
+python manage.py runserver - run server
+python manage.py shell - run shell
+python manage.py startapp <Name of app> - creating folder with application files
+python manage.py syncdb - creating tables in database(using models sructure)
+python manage.py dbshell - using sql in python shell
+
+Helpful links:
+http://djbook.ru/forum/topic/668/ - changing image size
+http://davedash.com/2009/02/21/resizing-image-on-upload-in-django/ - changing image size
