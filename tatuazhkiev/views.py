@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
+from django.template import RequestContext
+from fotos.models import Foto
+
 import datetime
 	
 def current_datetime(request):
@@ -35,7 +38,8 @@ def kontakti_handler(request):
     return render_to_response('kontakti.html')
 
 def foto_handler(request):
-    return render_to_response('foto/foto-tatuazh.html')
+    fotos = Foto.objects.all()
+    return render_to_response('foto/foto-tatuazh.html', {'fotos' : fotos}, context_instance = RequestContext(request))
 
 def foto_gubi_handler(request):
     return render_to_response('foto/foto-tatuazh-gub.html')

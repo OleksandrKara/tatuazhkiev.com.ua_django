@@ -52,49 +52,13 @@
 	<div class="col-9">
       <h3 class="h3-2">Татуаж бровей:</h3>
 			<div class='demonstrations'>
-				<div id="block-1" class="active">
-					<div class="view effect">
-						<img src="{% static 'images/photo/small/1s-brovi.jpg' %}" />
-						<div class="mask"></div>
-						<div class="content">
-						  <a href="{% static 'images/photo/big/1b-brovi.jpg' %}" 
-							 class='info fresco' 
-							 data-fresco-group='example' 
-							 data-fresco-caption="Татуаж бровей, сразу после процедуры и месяц спустя.">
-						  </a>
-						</div>
-					</div> 
-					  
-					  <div class="view effect">
-						<img src="{% static 'images/photo/small/2s-brovi.jpg' %}" />
-						<div class="mask"></div>
-						<div class="content">
-							  <a href="{% static 'images/photo/big/2b-brovi.jpg' %}" 
-								 class='fresco info' 
-								 data-fresco-group='example' 
-								 data-fresco-caption="Татуаж бровей до. Сразу после татуажа. Зажившие брови через месяц.">
-							  </a>
-						</div>
-					  </div> 
-					  
-					  <div class="view effect">
-						 <img src="{% static 'images/photo/small/3s-brovi.jpg' %}"  />
-						 <div class="mask"></div>
-						 <div class="content">
-							  <a href="{% static 'images/photo/big/3b-brovi.jpg' %}" 
-								 class='fresco info' 
-								 data-fresco-group='example' 
-								 data-fresco-caption="Татуаж бровей до. После. Зажившие.">
-							  </a>
-						</div>
-					  </div>
-					  
+				<div id="block-1" class="active">									  
 					  {% for foto in fotos %}
 					  <div class="view effect">
-						 <img src="{{  foto.small_image }}">
+						 <img src="{{  foto.small_image.url }}">
 						 <div class="mask"></div>
 						 <div class="content">
-							  <img src="{{  foto.big_image }}">
+						 <a href="{{  foto.big_image.url }}" 						  
 								 class='fresco info' 
 								 data-fresco-group='example' 
 								 data-fresco-caption="{{ foto.comment }}">

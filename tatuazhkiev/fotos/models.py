@@ -1,6 +1,6 @@
 from django.db import models
 
-class Publisher(models.Model):
+'''class Publisher(models.Model):
     name = models.CharField(max_length=30)
     address = models.CharField(max_length=50)
     city = models.CharField(max_length=60)
@@ -28,7 +28,7 @@ class Book(models.Model):
     publication_date = models.DateField()
 
     def __unicode__(self):
-        return self.title
+        return self.title'''
 
 class Foto(models.Model):
 	TATUAZH_TYPE = (		
@@ -38,5 +38,4 @@ class Foto(models.Model):
 	)	
 	comment = models.CharField(max_length=100)
 	type = models.CharField(max_length=2, default='Br', choices=TATUAZH_TYPE)
-	small_image = models.ImageField(upload_to="images/", help_text='970x1024px')
-	big_image = models.ImageField(upload_to="images/", help_text='150x150px')
+	image_location = models.ImageField(upload_to="images/", help_text='970x1024px and 150x150px')

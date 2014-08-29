@@ -4,7 +4,14 @@ python manage.py shell - run shell
 python manage.py startapp <Name of app> - creating folder with application files
 python manage.py syncdb - creating tables in database(using models sructure)
 python manage.py dbshell - using sql in python shell
-
+----------------------------------------------------------------------------------------
 Helpful links:
 http://djbook.ru/forum/topic/668/ - changing image size
 http://davedash.com/2009/02/21/resizing-image-on-upload-in-django/ - changing image size
+----------------------------------------------------------------------------------------
+Maybe should be need for media url schema:
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'site_media')
+url(r'^site_media/(.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
+MEDIA_URL = '/site_media/'
+url(r'^site_media/(.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}), 
+----------------------------------------------------------------------------------------
