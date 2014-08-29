@@ -8,13 +8,6 @@ python manage.py dbshell - using sql in python shell
 ----------------------------------------------------------------------------------------
 Installing additional apps:
 pip install sorl-thumbnail - for images resizing
-
-----------------------------------------------------------------------------------------
-Maybe should be need for media url schema:
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'site_media')
-url(r'^site_media/(.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
-MEDIA_URL = '/site_media/'
-url(r'^site_media/(.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}), 
 ----------------------------------------------------------------------------------------
 
 Items for future:
