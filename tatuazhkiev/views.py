@@ -37,9 +37,6 @@ def kontakti_handler(request):
 def foto_handler(request):
     return render_to_response('foto/foto-tatuazh.html')
 
-def foto_brovi_handler(request):
-    return render_to_response('foto/foto-tatuazh.html')
-
 def foto_gubi_handler(request):
     return render_to_response('foto/foto-tatuazh-gub.html')
 
