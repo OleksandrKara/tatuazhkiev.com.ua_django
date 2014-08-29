@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load thumbnail %}
 
 {% block title %}
 	Татуаж в Киеве - Фото татуаж глаз
@@ -54,28 +55,24 @@
 			<div class='demonstrations'>
 				  <div id="block-1" class="active">
 				  
-					  <div class="view effect">
-						 <img src="{% static 'images/photo/small/1s-glaza.jpg' %}" />
-						 <div class="mask"></div>
-						 <div class="content">
-							  <a href="{% static 'images/photo/big/1b-glaza.jpg' %}" 
-								 class='info fresco' 
-								 data-fresco-group='example' 
-								 data-fresco-caption="Заживший татуаж век.">
-							  </a>
-						</div>
-					  </div> 
-					  <div class="view effect">
-						 <img src="{% static 'images/photo/small/2s-glaza.jpg' %}" />
-						 <div class="mask"></div>
-						 <div class="content">
-							  <a href="{% static 'images/photo/big/2b-glaza.jpg' %}" 
-								 class='fresco info' 
-								 data-fresco-group='example' 
-								 data-fresco-caption="Татуаж стрелок, спустя 2 месяца.">
-							  </a>
-						</div>
-					  </div> 
+					  {% for foto in fotos %}																	
+							<div class="view effect">
+								 {% thumbnail foto.image_location "300x200" crop="50%" as small_foto %}
+								 <img src="{{ small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}">
+								 {% endthumbnail %}
+								 <div class="mask"></div>
+								 <div class="content">
+								 
+								 <a href="{{ foto.image_location.url }}"								 
+										 class='fresco info' 
+										 data-fresco-group='example' 
+										 data-fresco-caption="{{ foto.comment }}">
+								  </a>
+								 
+								</div>
+							</div>
+							{% endfor %}
+					  
 				  </div>
 			</div>
 	</div>

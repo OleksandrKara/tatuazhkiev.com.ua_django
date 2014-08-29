@@ -36,7 +36,9 @@ class Foto(models.Model):
 		('Br', 'Brovi'),
 		('Gu', 'Gubi'),
 		('Gl', 'Glaza'),
-	)	
-	comment = models.CharField(max_length=100)
+	)
+	title = models.CharField(max_length=300)
+	comment = models.CharField(max_length=300)
 	type = models.CharField(max_length=2, default='Br', choices=TATUAZH_TYPE)
 	image_location = models.ImageField(upload_to="images/", help_text='970x1024px and 150x150px')
+	date=models.DateTimeField(auto_now_add=True)

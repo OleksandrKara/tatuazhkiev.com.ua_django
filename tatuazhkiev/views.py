@@ -38,11 +38,13 @@ def kontakti_handler(request):
     return render_to_response('kontakti.html')
 
 def foto_handler(request):
-    fotos = Foto.objects.all()
+    fotos = Foto.objects.filter(type="Br")
     return render_to_response('foto/foto-tatuazh.html', {'fotos' : fotos}, context_instance = RequestContext(request))
 
 def foto_gubi_handler(request):
-    return render_to_response('foto/foto-tatuazh-gub.html')
+    fotos = Foto.objects.filter(type="Gu")
+    return render_to_response('foto/foto-tatuazh-gub.html', {'fotos' : fotos}, context_instance = RequestContext(request))
 
 def foto_glaza_handler(request):
-    return render_to_response('foto/foto-tatuazh-glaz.html')
+    fotos = Foto.objects.filter(type="Gl")
+    return render_to_response('foto/foto-tatuazh-glaz.html', {'fotos' : fotos}, context_instance = RequestContext(request))
