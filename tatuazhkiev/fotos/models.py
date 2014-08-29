@@ -1,4 +1,5 @@
 from django.db import models
+from sorl.thumbnail import ImageField
 
 '''class Publisher(models.Model):
     name = models.CharField(max_length=30)

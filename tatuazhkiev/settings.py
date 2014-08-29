@@ -24,6 +24,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+THUMBNAIL_DEBUG = True
+
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     #'django.contrib.staticfiles',
 	'tatuazhkiev.fotos',
+	'sorl.thumbnail',
 )
 
 MIDDLEWARE_CLASSES = (

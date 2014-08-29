@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load thumbnail %}
 
 {% block title %}
 	Татуаж в Киеве - Фото
@@ -52,20 +53,39 @@
 	<div class="col-9">
       <h3 class="h3-2">Татуаж бровей:</h3>
 			<div class='demonstrations'>
-				<div id="block-1" class="active">									  
+				<div id="block-1" class="active">	
+					 		{% for foto in fotos %}																	
+							<div class="view effect">
+								 {% thumbnail foto.image_location "150x200" crop="center" as small_foto %}
+								 <img src="{{ small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}">
+								 {% endthumbnail %}
+								 <div class="mask"></div>
+								 <div class="content">
+								 {% thumbnail foto.image_location "970x1024" crop="center" as big_foto %}
+								 <a href="{{ big_foto.url }}" width="{{ big_foto.width }}" height="{{ big_foto.height }}"								 
+										 class='fresco info' 
+										 data-fresco-group='example' 
+										 data-fresco-caption="{{ foto.comment }}">
+								  </a>
+								  {% endthumbnail %}
+								</div>
+							</div>
+							{% endfor %}
+					  
+					  <!--
 					  {% for foto in fotos %}
 					  <div class="view effect">
-						 <img src="{{  foto.small_image.url }}">
+						 <img src="{{  foto.image_location.url }}">
 						 <div class="mask"></div>
 						 <div class="content">
-						 <a href="{{  foto.big_image.url }}" 						  
+						 <a href="{{  foto.image_location.url }}" 						  
 								 class='fresco info' 
 								 data-fresco-group='example' 
 								 data-fresco-caption="{{ foto.comment }}">
 							  </a>
 						</div>
 					  </div>
-					  {% endfor %}	
+					  {% endfor %}	-->
 			</div>
 	</div>
   </div>
