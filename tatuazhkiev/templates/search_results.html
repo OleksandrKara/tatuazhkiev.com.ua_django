@@ -1,0 +1,12 @@
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if fotos %}
+    <p>Found {{ fotos|length }} foto{{ fotos|pluralize }}.</p>
+    <ul>
+        {% for foto in fotos %}
+        <li>{{ foto.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No fotos matched your search criteria.</p>
+{% endif %}

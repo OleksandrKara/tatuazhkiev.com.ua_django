@@ -105,3 +105,10 @@ STATICFILES_FINDERS = (
 )
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kiev.tatuazh@gmail.com'
+EMAIL_HOST_PASSWORD = 'karaanna'

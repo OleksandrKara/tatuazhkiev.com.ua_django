@@ -5,6 +5,8 @@ from django.template import Context
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from fotos.models import Foto
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
 
 import datetime
 	

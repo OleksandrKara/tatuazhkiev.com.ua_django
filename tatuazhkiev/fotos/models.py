@@ -40,5 +40,8 @@ class Foto(models.Model):
 	title = models.CharField(max_length=300)
 	comment = models.CharField(max_length=300)
 	type = models.CharField(max_length=2, default='Br', choices=TATUAZH_TYPE)
-	image_location = models.ImageField(upload_to="images/", help_text='970x1024px and 150x150px')
-	date=models.DateTimeField(auto_now_add=True)
+	image_location = models.ImageField(upload_to="images/", help_text='Please upload your photos here')
+	date = models.DateTimeField(auto_now_add=True)
+'''
+	def __unicode__(self):
+        return self.title'''
