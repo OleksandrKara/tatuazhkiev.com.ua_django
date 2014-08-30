@@ -47,16 +47,24 @@
       </div>
       <div class="col-16">
         <h2 class="h2 p2">Записаться:</h2>
-        <form id="form" method="post" action="http://localhost:8888/send_mail/">
+		{% if errors %}
+			<ul>
+				{% for error in errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+        {% endif %}
+        <form id="form" method="post" action="/contact/">
+		{% csrf_token %}
           <fieldset>
             <label>
-              <input type="text" value="Ваше имя" onBlur="if(this.value=='') this.value='Ваше имя'" onFocus="if(this.value =='Ваше имя' ) this.value=''">
+              <input type="text" name="subject" value="Ваше имя" onBlur="if(this.value=='') this.value='Ваше имя'" onFocus="if(this.value =='Ваше имя' ) this.value=''" />
+            </label>
+			<label>
+              <input type="text" style="border: 1px solid #3F3F3F; color: #6F6F6F;" required pattern="[0-9_-]{10}" placeholder="(___) ___ __ __" id="user_phone1" name= "phone" title="Формат: (096) 999 99 99"/>
             </label>
             <label>
-              <input type="text" value="E-mail" onBlur="if(this.value=='') this.value='E-mail'" onFocus="if(this.value =='E-mail' ) this.value=''">
-            </label>
-            <label>
-              <textarea onBlur="if(this.value==''){this.value='Сообщение'}" onFocus="if(this.value=='Сообщение'){this.value=''}">Сообщение</textarea>
+              <textarea name="message" onBlur="if(this.value==''){this.value='Сообщение'}" onFocus="if(this.value=='Сообщение'){this.value=''}">Сообщение</textarea>
             </label>
             <div class="btns">
 				<a href="javascript:{}" onclick="document.getElementById('form').reset();" class="link-1">Очистить</a> 

@@ -12,21 +12,21 @@ def contact(request):
             errors.append('Enter a subject.')
         if not request.POST.get('message', ''):
             errors.append('Enter a message.')
-        if request.POST.get('email') and '@' not in request.POST['email']:
-            errors.append('Enter a valid e-mail address.')
+        if not request.POST.get('phone', ''):
+            errors.append('Please enter phone.')
         if not errors:
             send_mail(
                 request.POST['subject'],
-                request.POST['message'],
-                request.POST.get('email', 'olexandr.kara@gmail.com'),
+                "Name:\t "+ request.POST['subject']+"\nPhone:\t "+request.POST['phone']+"\nMessage: "+request.POST['message'],
+                request.POST.get('olexandr.kara@gmail.com'),
                 ['kiev.tatuazh@gmail.com'],
             )
-            return HttpResponseRedirect('/contact/thanks/')
-    return render_to_response('contact_form.html',
+            return HttpResponseRedirect('/thanks/')
+    return render_to_response('kontakti.html/',
         {'errors': errors})
 
 def contact_form(request):
-    return render_to_response('contact_form.html')
+    return render_to_response('kontakti.html/')
 
 def thanks(request):
     return render_to_response('thanks.html')

@@ -26,7 +26,7 @@ urlpatterns = patterns('',
 	(r'^kontakti.html/$', kontakti_handler),
 	(r'^contact_form/$', views.contact_form),
 	(r'^contact/$', views.contact),
-    (r'^contact/thanks/$', views.thanks),
+    (r'^thanks/$', views.thanks),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
