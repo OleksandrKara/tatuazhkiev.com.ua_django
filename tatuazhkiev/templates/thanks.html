@@ -1,8 +1,52 @@
-<html>
-<head>
-    <title>Thanks</title>
-</head>
-<body>
-    <h1>Thank you for your cooperation!!! We will call you.</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+	Татуаж в Киеве - Вопросы
+{% endblock %}
+{% block libs %}
+	{{ block.super }}
+	<script>
+    function redirect(){
+       window.location.href = "/index.html";
+    }
+    setTimeout(redirect, 3000); //3000 is equivalent to 3 seconds
+	</script>
+{% endblock %}
+{% block menu %}
+    <div class="subpages-nav">
+      <nav>
+        <ul class="menu">
+         <li class="li-none"><a href="/index.html">Главная</a></li>
+         <li><a href="/foto">Фото</a></li>
+		  <li><a href="/ceni.html">Цены</a></li>
+          <li class="li-left li-none"><a href="/otzivi.html">Отзывы</a></li>
+          <li><a class="moveup" href="/faq.html"  >Вопрос<br>ответ</a></li>
+          <li><a href="/kontakti.html">Контакты</a></li>
+        </ul>
+        <h1><a class="modalbox" href="#inline"><img src="{% static 'images/logo.png' %}" alt=""></a></h1>
+      </nav>
+    </div>
+{% endblock %}
+{% block content %}
+<!--==============================content================================-->
+<section id="content">
+  <div class="pad-1">
+    <div class="page4-row1">
+      <div class="col-11">
+       
+	   <h2 class="h2 p2">Спасибо за Вашу заявку:</h2>
+        
+        <div class="wrap bot-2"> 
+          <div class="extra-wrap">
+				<p><h3>С Вами свяжуться в течении часа </h3></p>
+          </div>
+        </div>		
+
+      
+	  </div>
+    </div>
+  </div>
+</section>
+{% endblock %}	
