@@ -9,7 +9,7 @@ Helpful commands:
 
 Items for future:
 - 1) Enable email sending for button
-- 2) Enable email sending in contact form
+- 2) Enable email sending in contact form - DONE
 - 3) Make site map as dynamic feature
 - 4) Improving url schema
 - 5) Adding text to the foto fields
