@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 
 # Create your views here.
 
-def contact(request):
+def kontakti_handler(request):
     errors = []
     if request.method == 'POST':
         if not request.POST.get('subject', ''):
@@ -25,8 +25,14 @@ def contact(request):
     return render_to_response('kontakti.html/',
         {'errors': errors})
 
-def contact_form(request):
-    return render_to_response('kontakti.html/')
-
 def thanks(request):
     return render_to_response('thanks.html')
+
+'''def ajax_mail_sending():
+    success = send_mail(
+                request.POST['name'],
+                "Name:\t "+ request.POST['name']+"\nPhone:\t "+request.POST['user_phone']+"\nMessage: ",
+                request.POST.get('olexandr.kara@gmail.com'),
+                ['kiev.tatuazh@gmail.com'],
+    )
+	return true'''

@@ -23,9 +23,8 @@ urlpatterns = patterns('',
 	(r'^ceni.html/$', ceni_handler),
 	(r'^otzivi.html/$', otzivi_handler),
 	(r'^faq.html/$', faq_handler),
-	(r'^kontakti.html/$', kontakti_handler),
-	(r'^contact_form/$', views.contact_form),
-	(r'^contact/$', views.contact),
+	(r'^kontakti.html/$', views.kontakti_handler),
+	(r'^contact/$', views.kontakti_handler),
     (r'^thanks/$', views.thanks),
 )
 

@@ -36,9 +36,6 @@ def otzivi_handler(request):
 def faq_handler(request):
     return render_to_response('faq.html')
 
-def kontakti_handler(request):
-    return render_to_response('kontakti.html')
-
 def foto_handler(request):
     fotos = Foto.objects.filter(type="Br")
     return render_to_response('foto/foto-tatuazh.html', {'fotos' : fotos}, context_instance = RequestContext(request))
