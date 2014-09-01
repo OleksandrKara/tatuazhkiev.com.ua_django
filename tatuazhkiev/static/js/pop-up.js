@@ -38,14 +38,14 @@
 				
 				$.ajax({
 					type: 'POST',
-					url: '/contact/',
+					url: '/xhr_test',
 					crossDomain: true,
 					data: $("#contact").serialize(),
 					success: function(data) {					
-						if(data == "true") {
+						if(data == "True") {
 							$("#contact").fadeOut("fast", function(){
 								$(this).before("<p><strong>Спасибо. С вами свяжуться в течении часа.</strong></p>");
-								setTimeout("$.fancybox.close()", 1000);
+								setTimeout("$.fancybox.close()", 2000);
 							});
 						}
 					}

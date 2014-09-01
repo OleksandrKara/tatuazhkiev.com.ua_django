@@ -2,8 +2,18 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
+from django.http import HttpResponse
 
 # Create your views here.
+
+def xhr_test(request):
+	'''send_mail(
+		request.POST['name'],
+		request.POST['user_phone'],
+		'kiev.tatuazh@gmail.com',
+		['kiev.tatuazh@gmail.com', 'olexandr.kara@gmail.com'])'''
+	message = True
+	return HttpResponse(message)
 
 def kontakti_handler(request):
     errors = []
