@@ -8,7 +8,7 @@ Helpful commands:
 ----------------------------------------------------------------------------------------
 
 Items for future:
-- 1) Enable email sending using AJAX
+- 1) Enable email sending using ajax
 - 2) Enable email sending in contact form - DONE
 - 3) Make site map as dynamic feature
 - 4) Improving url schema
