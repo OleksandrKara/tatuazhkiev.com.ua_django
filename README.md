@@ -10,7 +10,7 @@ Helpful commands:
 Items for future:
 - 1) Enable email sending using ajax - DONE
 - 2) Enable email sending in contact form - DONE
-- 3) Make site map as dynamic feature
+- 3) Make site map as dynamic feature(http://djbook.ru/ch11s06.html)
 - 4) Improving url schema - DONE
 - 5) Adding text to the foto fields
 - 6) Updating all text information for seo optimization
