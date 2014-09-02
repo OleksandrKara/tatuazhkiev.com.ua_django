@@ -1,4 +1,5 @@
 ﻿{% load static %}
+{% with first_item='/index.html' second_item='/foto' third_item='/ceni.html' forth_item='/otzivi.html' five_item='/faq.html' six_item='/kontakti.html' %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +58,7 @@
 	</div>
 <br>
 	<form id="contact" name="contact" action="#" method="post" class="phone_form">
+		{% csrf_token %}
 		<label for="name">Ваше имя:</label>
 		<input type="name" id="name" name="name" class="txt" autofocus="autofocus">
 		<br>
@@ -72,3 +74,4 @@
 
 
 <div style="position: fixed; top: 30%; left:0%; z-index:2;"><a target="_blank" class="switch-a-img" href="https://vk.com/write17914100"></a></div>
+{% endwith %}

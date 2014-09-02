@@ -9,7 +9,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 
 import datetime
-	
+
 def current_datetime(request):
     now = datetime.datetime.now()    
     return render_to_response('current_datetime.html', {'current_date': now})

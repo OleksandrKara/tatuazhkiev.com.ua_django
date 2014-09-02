@@ -7,11 +7,15 @@ from django.http import HttpResponse
 # Create your views here.
 
 def xhr_test(request):
-	'''send_mail(
-		request.POST['name'],
-		request.POST['user_phone'],
-		'kiev.tatuazh@gmail.com',
-		['kiev.tatuazh@gmail.com', 'olexandr.kara@gmail.com'])'''
+	name = request.POST.get('name')
+	phone = request.POST.get('phone')
+	send_mail(
+		"Please call me back!",
+        "Name: "+ name + "\nPhone: " + phone,
+		request.POST.get('olexandr.kara@gmail.com'),
+                ['kiev.tatuazh@gmail.com'],
+	)
+	
 	message = True
 	return HttpResponse(message)
 
@@ -26,7 +30,7 @@ def kontakti_handler(request):
             errors.append('Please enter phone.')
         if not errors:
             send_mail(
-                request.POST['subject'],
+                "Please read the letter and call me back!",
                 "Name:\t "+ request.POST['subject']+"\nPhone:\t "+request.POST['phone']+"\nMessage: "+request.POST['message'],
                 request.POST.get('olexandr.kara@gmail.com'),
                 ['kiev.tatuazh@gmail.com'],
@@ -37,12 +41,3 @@ def kontakti_handler(request):
 
 def thanks(request):
     return render_to_response('thanks.html')
-
-'''def ajax_mail_sending():
-    success = send_mail(
-                request.POST['name'],
-                "Name:\t "+ request.POST['name']+"\nPhone:\t "+request.POST['user_phone']+"\nMessage: ",
-                request.POST.get('olexandr.kara@gmail.com'),
-                ['kiev.tatuazh@gmail.com'],
-    )
-	return true'''

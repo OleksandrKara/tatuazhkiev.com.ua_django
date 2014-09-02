@@ -40,12 +40,12 @@
 					type: 'POST',
 					url: '/xhr_test',
 					crossDomain: true,
-					data: $("#contact").serialize(),
+					data: $("form#contact").serialize(),
 					success: function(data) {					
 						if(data == "True") {
 							$("#contact").fadeOut("fast", function(){
 								$(this).before("<p><strong>Спасибо. С вами свяжуться в течении часа.</strong></p>");
-								setTimeout("$.fancybox.close()", 2000);
+								setTimeout("$.fancybox.close()", 1000);
 							});
 						}
 					}
