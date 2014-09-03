@@ -10,14 +10,14 @@ Helpful commands:
 Items for future:
 - 1) Enable email sending using ajax - DONE
 - 2) Enable email sending in contact form - DONE
-- 3) Make site map as dynamic feature(http://djbook.ru/ch11s06.html)
+- 3) Make site map as dynamic feature - DONE
 - 4) Improving url schema - DONE
 - 5) Adding text to the foto fields
 - 6) Updating all text information for seo optimization
 - 7) Adding sections with text content for seo
 - 8) Improving css styles and improving web site templates
 - 9) Change ceny.html template with Anna
-- 10) Make hyperlink to odnoklassniki page
+- 10) Make hyperlink to odnoklassniki page and to facebook
 - 11) To order 3 slide image at ui designer
 
 ----------------------------------------------------------------------------------------
