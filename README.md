@@ -19,6 +19,7 @@ Items for future:
 - 9) Change ceny.html template with Anna
 - 10) Make hyperlink to odnoklassniki page and to facebook
 - 11) To order 3 slide image at ui designer
+- 12) Create 2 menu items more, "Статьи", "О мастере"
 
 ----------------------------------------------------------------------------------------
 
