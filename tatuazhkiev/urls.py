@@ -1,33 +1,44 @@
 from django.conf.urls import patterns, include, url
-from tatuazhkiev.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
-from tatuazhkiev.fotos import views
+from tatuazhkiev.sitemap import SitemapXML
+ 
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'tatuazhkiev.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-	#('^date/$', current_datetime),
-	#(r'^time/plus/(\d{1,2})/$', hours_ahead),
-	(r'^$', main_page),
-	(r'^index.html/$', main_page),
-	(r'^foto/$', foto_handler),
-	(r'^foto/foto-brovi.html/$', foto_handler),
-	(r'^foto/foto-tatuazh-gub.html/$', foto_gubi_handler),
-	(r'^foto/foto-tatuazh-glaz.html/$', foto_glaza_handler),
-	(r'^ceni.html/$', ceni_handler),
-	(r'^otzivi.html/$', otzivi_handler),
-	(r'^faq.html/$', faq_handler),
-	(r'^kontakti.html/$', views.kontakti_handler),
-	(r'^contact/$', views.kontakti_handler),
-    (r'^thanks/$', views.thanks),
-	(r'^xhr_test$', views.xhr_test),
+sitemaps = {'main':SitemapXML}
+
+urlpatterns = patterns('tatuazhkiev.views',
+    
+	(r'^$', 'main_page'),
+	(r'^index/?$', 'main_page'),
+	(r'^foto/$', 'foto_handler'),
+	(r'^foto/foto-brovi/$', 'foto_handler'),
+	(r'^foto/foto-tatuazh-gub/$', 'foto_gubi_handler'),
+	(r'^foto/foto-tatuazh-glaz/$', 'foto_glaza_handler'),
+	(r'^ceni/$', 'ceni_handler'),
+	(r'^otzivi/$', 'otzivi_handler'),
+	(r'^faq/$', 'faq_handler'),
 )
+
+urlpatterns += patterns('',
+    # http://host/sitemap.xml
+    (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps':sitemaps}),
+)
+
+urlpatterns += patterns('',
+    url(r'^admin/', include(admin.site.urls)),
+)
+
+urlpatterns += patterns('tatuazhkiev.fotos.views',
+    (r'^kontakti/$', 'kontakti_handler'),
+	(r'^contact/$', 'kontakti_handler'),
+    (r'^thanks/$', 'thanks'),
+	(r'^xhr_test$', 'xhr_test'),
+)
+
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()

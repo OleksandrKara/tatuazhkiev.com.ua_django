@@ -8,23 +8,16 @@ from fotos.models import Foto
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 
-import datetime
-
-def current_datetime(request):
-    now = datetime.datetime.now()    
-    return render_to_response('current_datetime.html', {'current_date': now})
-
-def hours_ahead(request, offset):
+'''def hours_ahead(request, offset):
     try:
         offset = int(offset)
     except ValueError:
         raise Http404()
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
     html = "<html><body>In %s hour(s), it will be %s.</body></html>" % (offset, dt)
-    return HttpResponse(html)
+    return HttpResponse(html)'''
 
 def main_page(request):
-    now = datetime.datetime.now() 
     return render_to_response('index.html')
 
 def ceni_handler(request):

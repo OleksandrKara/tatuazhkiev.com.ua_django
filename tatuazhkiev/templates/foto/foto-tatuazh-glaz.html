@@ -27,14 +27,14 @@
  	<div class="subpages-nav">
 		<nav>
 		  <ul class="menu">
-			  <li class="li-none"><a href="/index.html">Главная</a></li>
-			  <li class="current"><a href="/foto">Фото</a></li>
-			  <li><a href="/ceni.html">Цены</a></li>
-			  <li class="li-left li-none"><a href="/otzivi.html">Отзывы</a></li>
-			  <li><a  href="/faq.html" class="moveup" >Вопрос<br>ответ</a></li>
-			  <li><a href="/kontakti.html">Контакты</a></li>
+			  <li class="li-none"><a href="{{ first_item }}">Главная</a></li>
+			  <li class="current"><a href="{{ second_item }}">Фото</a></li>
+			  <li><a href="{{ third_item }}">Цены</a></li>
+			  <li class="li-left li-none"><a href="{{ forth_item }}">Отзывы</a></li>
+			  <li><a  href="{{ five_item }}" class="moveup" >Вопрос<br>ответ</a></li>
+			  <li><a href="{{ six_item }}">Контакты</a></li>
 		  </ul>
-        <h1><a class="modalbox" href="#inline"><img src="{% static 'images/logo.png' %}" alt=""></a></h1>
+        <h1><a class="modalbox" href="#inline"><img src="{% static 'images/logo.png' %}" alt="Logo for tatuazh web site"></a></h1>
 		</nav>
 	</div>
 {% endblock %}
@@ -45,9 +45,9 @@
     <div class="col-8">
       <h2 class="h2 p2">Категории:</h2>
       <ul class="list-1">
-        <li><a href="/foto/foto-brovi.html">Татуаж бровей</a></li>
-        <li class="current"><a href="/foto/foto-tatuazh-gub.html">Татуаж губ</a></li>
-        <li><a href="/foto/foto-tatuazh-glaz.html">Татуаж глаз</a></li>        
+        <li><a href="/foto/foto-brovi/">Татуаж бровей</a></li>
+        <li class="current"><a href="/foto/foto-tatuazh-gub/">Татуаж губ</a></li>
+        <li><a href="/foto/foto-tatuazh-glaz/">Татуаж глаз</a></li>        
        </ul>
     </div>
 	<div class="col-9">
@@ -58,7 +58,7 @@
 					  {% for foto in fotos %}																	
 							<div class="view effect">
 								 {% thumbnail foto.image_location "300x200" crop="50%" as small_foto %}
-								 <img src="{{ small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}">
+								 <img src="{{ small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}" alt = "{{ foto.comment }}">
 								 {% endthumbnail %}
 								 <div class="mask"></div>
 								 <div class="content">
