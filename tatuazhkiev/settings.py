@@ -30,6 +30,10 @@ ALLOWED_HOSTS = []
 
 SITE_ID = 2
 
+MARKDOWN_EDITOR_SKIN = 'markitup'
+MARKDOWN_EXTENSIONS = ['extra']
+MARKDOWN_DEUX_HELP_URL = "/help/markdown/"
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -38,12 +42,14 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    #'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
 	'tatuazhkiev.fotos',
 	'sorl.thumbnail',
 	'django.contrib.sitemaps',
 	'django.contrib.flatpages',
 	'django.contrib.sites',
+	'django_markdown',
+	'markdown_deux',
 )
 
 
