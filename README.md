@@ -26,4 +26,3 @@ Items for future:
 Installing additional apps:
 - pip install sorl-thumbnail - for images resizing
 - pip install django-markdown
-- pip install docutils
