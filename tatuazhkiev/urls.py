@@ -8,8 +8,7 @@ from tatuazhkiev.sitemap import SitemapXML
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 from tatuazhkiev.fotos.models import Foto
-
-
+from django.contrib.flatpages import views
 
 info_dict = {
     'queryset': Foto.objects.all(),
@@ -54,6 +53,8 @@ urlpatterns += patterns('tatuazhkiev.fotos.views',
     (r'^thanks/$', 'thanks'),
 	(r'^xhr_test$', 'xhr_test'),
 )
+
+
 
 
 

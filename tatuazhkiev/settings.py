@@ -28,6 +28,7 @@ THUMBNAIL_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 2
 
 # Application definition
 
@@ -41,6 +42,8 @@ INSTALLED_APPS = (
 	'tatuazhkiev.fotos',
 	'sorl.thumbnail',
 	'django.contrib.sitemaps',
+	'django.contrib.flatpages',
+	'django.contrib.sites',
 )
 
 
@@ -52,6 +55,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 
