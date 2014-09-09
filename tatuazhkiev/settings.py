@@ -44,10 +44,9 @@ INSTALLED_APPS = (
 	'django.contrib.sitemaps',
 	'django.contrib.flatpages',
 	'django.contrib.sites',
-    'tinymce',
+	'tinymce',
     'flatpages_tinymce',
 )
-
 
 
 
@@ -124,7 +123,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'kiev.tatuazh@gmail.com'
 EMAIL_HOST_PASSWORD = 'karaanna'
-
 
 TINYMCE_DEFAULT_CONFIG = {
     # custom plugins
