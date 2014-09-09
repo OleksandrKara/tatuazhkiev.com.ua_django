@@ -48,7 +48,6 @@ urlpatterns += patterns('',
 
 urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
-	url('^markdown/', include( 'django_markdown.urls')),
 )
 
 urlpatterns += patterns('tatuazhkiev.fotos.views',
