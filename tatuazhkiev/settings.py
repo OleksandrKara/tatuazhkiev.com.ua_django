@@ -30,10 +30,6 @@ ALLOWED_HOSTS = []
 
 SITE_ID = 2
 
-MARKDOWN_EDITOR_SKIN = 'markitup'
-MARKDOWN_EXTENSIONS = ['extra']
-MARKDOWN_DEUX_HELP_URL = "/help/markdown/"
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -48,9 +44,10 @@ INSTALLED_APPS = (
 	'django.contrib.sitemaps',
 	'django.contrib.flatpages',
 	'django.contrib.sites',
-	'django_markdown',
-	'markdown_deux',
+    'tinymce',
+    'flatpages_tinymce',
 )
+
 
 
 
@@ -127,3 +124,15 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'kiev.tatuazh@gmail.com'
 EMAIL_HOST_PASSWORD = 'karaanna'
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    # custom plugins
+    'plugins': "table,spellchecker,paste,searchreplace",
+    # editor theme
+    'theme': "advanced",
+    # custom CSS file for styling editor area
+    'content_css': MEDIA_URL + "css/custom_tinymce.css",
+    # use absolute urls when inserting links/images
+    'relative_urls': False,
+}

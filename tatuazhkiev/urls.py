@@ -9,7 +9,7 @@ from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 from tatuazhkiev.fotos.models import Foto
 from django.contrib.flatpages import views
-from django_markdown import flatpages
+
 
 info_dict = {
     'queryset': Foto.objects.all(),
@@ -44,9 +44,9 @@ urlpatterns += patterns('',
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps':sitemaps}),
 )
 
-admin.autodiscover()
-flatpages.register()
-urlpatterns += [ url(r'^admin/', include(admin.site.urls)), ]
+urlpatterns += patterns('',
+     (r'^tinymce/', include('tinymce.urls')),
+)
 
 urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),
