@@ -25,4 +25,7 @@ Items for future:
 
 Installing additional apps:
 - pip install sorl-thumbnail - for images resizing
-- pip install django-markdown
+
+----------------------------------------------------------------------------------------
+
+https://github.com/mjr27/django-flatpages-tinymce -  for tinymce editing(dont forget to switch "default lib" to "from django.conf.urls import patterns, url, include" in "C:\Program Files\Python\Lib\site-packages\flatpages_tinymce")
