@@ -28,4 +28,13 @@ Installing additional apps:
 
 ----------------------------------------------------------------------------------------
 
-https://github.com/mjr27/django-flatpages-tinymce -  for tinymce editing(dont forget to switch "default lib" to "from django.conf.urls import patterns, url, include" in "C:\Program Files\Python\Lib\site-packages\flatpages_tinymce")
+- https://github.com/mjr27/django-flatpages-tinymce -  for tinymce editing(dont forget to switch "default lib" to "from django.conf.urls import patterns, url, include" in "C:\Program Files\Python\Lib\site-packages\flatpages_tinymce")
+- To remove not necessery code in C:\Program Files\Python\Lib\site-packages\flatpages_tinymce\admin.py
+- '''elif db_field.name == "template_name":
+            prev_field = super(FlatPageAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+            return forms.FilePathField(label=prev_field.label,
+                                       path=settings.TEMPLATE_DIR,
+                                       required=False,
+                                       recursive=False,
+                                       match=settings.TEMPLATE_FILES_REGEXP,
+                                       )'''
