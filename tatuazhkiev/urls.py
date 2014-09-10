@@ -3,28 +3,21 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
-from tatuazhkiev.sitemap import SitemapXML
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib.sitemaps.views import sitemap
 from tatuazhkiev.fotos.models import Foto
 from django.contrib.flatpages import views
 
-info_dict = {
-    'queryset': Foto.objects.all(),
-    'date_field': 'date',
-}
-
 sitemaps = {
     'flatpages': FlatPageSitemap,
-    'fotos': GenericSitemap(info_dict, priority=0.6),
 }
 
 admin.autodiscover()
 
-sitemaps = {'main':SitemapXML}
 
 urlpatterns = patterns('tatuazhkiev.views',
     
+	
 	(r'^$', 'main_page'),
 	(r'^index.html/?$', 'main_page'),
 	(r'^index/?$', 'main_page'),

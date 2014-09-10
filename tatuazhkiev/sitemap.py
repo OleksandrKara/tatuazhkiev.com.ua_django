@@ -2,9 +2,9 @@
 # Импортируем базовый класс
 from django.contrib.sitemaps import Sitemap
 # Импортируем модель с данными 
-from fotos.models import Foto
+#from fotos.models import Foto
 
-class SitemapXML(Sitemap):
+'''class SitemapXML(Sitemap):
     # Частота обновления страницы (см. http://www.sitemaps.org/) 
     changefreq = 'weekly'
     # Приоритет сканирования страницы (см. http://www.sitemaps.org/)
@@ -24,4 +24,10 @@ class SitemapXML(Sitemap):
     def location(self, obj):
         # Метод возвращает URL который указывается в параметре loc
         # (см. http://www.sitemaps.org/)
-        return "/media/%s" % obj.image_location
+        return "/media/%s" % obj.image_location'''
+		
+class FlatpageSitemap(Sitemap): 
+    def items(self): 
+        from django.contrib.sites.models import Site 
+        return FlatPage.all().filter('sites = ', 
+Site.objects.get_current().key()) 
