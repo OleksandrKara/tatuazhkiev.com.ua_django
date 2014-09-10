@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-	Татуаж в Киеве - Вопросы
+	{{ flatpage.title }}
 {% endblock %}
 {% block libs %}
 	{{ block.super }}
@@ -31,6 +31,8 @@
       <div class="col-11">
        
 	   <h2 class="h2 p2">Вопрос - ответ:</h2>
+	   
+	   {{ flatpage.content }}
         
         <div class="wrap bot-2"> 
           <div class="extra-wrap">

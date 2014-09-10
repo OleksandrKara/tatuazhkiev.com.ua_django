@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-	Татуаж в Киеве - Отзывы
+	{{ flatpage.title }}
 {% endblock %}
 {% block libs %}
 	{{ block.super }}
@@ -34,7 +34,7 @@
 		</script>
 		
 		<br>
-		<h3 class="h3-2">Будем рады любому Вашему отзыву:</h3>
+		{{ flatpage.content }}
 		<div id="vk_comments"></div>
 		<script type="text/javascript">
 		VK.Widgets.Comments("vk_comments", {limit: 10, width: "720", attach: "*"});

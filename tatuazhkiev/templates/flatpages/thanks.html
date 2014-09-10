@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-	Татуаж в Киеве
+	{{ flatpage.title }}
 {% endblock %}
 {% block libs %}
 	{{ block.super }}
@@ -40,7 +40,7 @@
         
         <div class="wrap bot-2"> 
           <div class="extra-wrap">
-				<p><h3>С Вами свяжуться в течении часа </h3></p>
+				 {{ flatpage.content }}
           </div>
         </div>		
 

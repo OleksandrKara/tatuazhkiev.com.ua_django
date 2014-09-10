@@ -36,8 +36,7 @@ def kontakti_handler(request):
                 ['kiev.tatuazh@gmail.com'],
             )
             return HttpResponseRedirect('/thanks/')
-    return render_to_response('kontakti.html/',
-        {'errors': errors})
+    return render_to_response('kontakti.html/', {'errors': errors})
 
 def thanks(request):
     return render_to_response('thanks.html')

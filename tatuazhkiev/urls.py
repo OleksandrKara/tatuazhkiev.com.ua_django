@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.conf.urls.static import static
@@ -16,22 +17,24 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('tatuazhkiev.views',
-    
-	
-	(r'^$', 'main_page'),
-	(r'^index.html/?$', 'main_page'),
-	(r'^index/?$', 'main_page'),
+	#(r'^$', 'main_page'),
+	#(r'^index.html/?$', 'main_page'),
+	#(r'^index/?$', 'main_page'),
 	(r'^foto/$', 'foto_handler'),
 	(r'^foto/foto-brovi/$', 'foto_handler'),
 	(r'^foto/foto-tatuazh-gub/$', 'foto_gubi_handler'),
 	(r'^foto/foto-tatuazh-glaz/$', 'foto_glaza_handler'),
-	(r'^ceni/$', 'ceni_handler'),
-	(r'^otzivi/$', 'otzivi_handler'),
-	(r'^faq/$', 'faq_handler'),
+	#(r'^ceni/$', 'ceni_handler'),
+	#(r'^otzivi/$', 'otzivi_handler'),
+	#(r'^faq/$', 'faq_handler'),
 )
 
+#special for index.html
+urlpatterns += [
+    url(r'^index.html/?$', views.flatpage, {'url': '/'}),
+]
+
 urlpatterns += patterns('',
-    # http://host/sitemap.xml
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps':sitemaps}),
 )
 
