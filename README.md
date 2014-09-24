@@ -38,3 +38,9 @@ Installing additional apps:
                                        recursive=False,
                                        match=settings.TEMPLATE_FILES_REGEXP,
                                        )'''
+
+
+
+http://www.lfd.uci.edu/~gohlke/pythonlibs/ - exe files for windows
+
+Do not to forget to use virtualenv
